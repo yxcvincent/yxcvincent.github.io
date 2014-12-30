@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Blog of 戏水龙鹰]]></title>
+  <title><![CDATA[戏水龙鹰的博客]]></title>
   <subtitle><![CDATA[齐家立业平天下]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yxcvincent.github.io/"/>
-  <updated>2014-12-30T16:33:11.847Z</updated>
+  <updated>2014-12-30T16:41:55.132Z</updated>
   <id>http://yxcvincent.github.io/</id>
   
   <author>
-    <name><![CDATA[Yxcvincent]]></name>
+    <name><![CDATA[Yi Xiaochun]]></name>
     <email><![CDATA[yxcvincent@163.com]]></email>
   </author>
   
