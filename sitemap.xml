@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yxcvincent.github.io/2014/12/30/hello-world/</loc>
+    <loc>http://yxcvincent.github.io/2014/12/31/2014%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2014-12-31T07:02:36.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yxcvincent.github.io/2014/12/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2014-12-31T06:47:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yxcvincent.github.io/about/index.html</loc>
+    <lastmod>2014-12-31T05:09:35.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yxcvincent.github.io/tags/index.html</loc>
     <lastmod>2014-12-30T03:11:45.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://yxcvincent.github.io/categories/index.html</loc>
-    <lastmod>2014-12-30T03:11:45.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yxcvincent.github.io/tags/index.html</loc>
     <lastmod>2014-12-30T03:11:45.000Z</lastmod>
   </url>
   

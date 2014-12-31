@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[戏水龙鹰的博客]]></title>
+  <title><![CDATA[戏水龙鹰]]></title>
   <subtitle><![CDATA[齐家立业平天下]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yxcvincent.github.io/"/>
-  <updated>2014-12-30T16:41:55.132Z</updated>
+  <updated>2014-12-31T07:11:27.874Z</updated>
   <id>http://yxcvincent.github.io/</id>
   
   <author>
@@ -15,33 +15,258 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://yxcvincent.github.io/2014/12/30/hello-world/"/>
-    <id>http://yxcvincent.github.io/2014/12/30/hello-world/</id>
-    <published>2014-12-30T03:11:45.000Z</published>
-    <updated>2014-12-30T03:11:45.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <title><![CDATA[2014年终总结]]></title>
+    <link href="http://yxcvincent.github.io/2014/12/31/2014%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <id>http://yxcvincent.github.io/2014/12/31/2014年终总结/</id>
+    <published>2014-12-31T06:49:05.000Z</published>
+    <updated>2014-12-31T07:02:36.000Z</updated>
+    <content type="html"><![CDATA[<p>齐家立业平天下，24岁注定是不平凡的一年。转眼年末，做一份年终总结，用以纠错思过，改邪归正。</p>
+<h2 id="Experience">Experience</h2>
+<h4 id="科研">科研</h4>
+<ul>
+<li>发表ICSS会议论文一篇。</li>
+<li>发表清华学报期刊论文一篇。</li>
+<li>开发2个信息系统，申请2项软件著作权。</li>
+</ul>
+<h4 id="社工">社工</h4>
+<p>卸任清华大学校团委科创中心副主任，结束为期五年的科创生活，回首过往，历历在目，感慨万千。本学期在任期间：</p>
+<ul>
+<li>建档建制，固本培元——负责清华大学累进支持基金，归档建制，支持59个学生课外科技项目，支持额度42w元。</li>
+<li>星星之火，可以燎原——负责本科生暑期海外研修支持计划，支持193名非星火班同学分赴世界各地交流游学，总支持额度达到170w元。</li>
+<li>求全求新，求精求行——负责科创中心信息化工作，开发科创中心信息化管理平台。</li>
+<li>获首都高校“先锋杯”优秀基层团干部称号。</li>
+</ul>
+<h4 id="创业">创业</h4>
+<ul>
+<li>完美前程，高校专业垂直搜索与咨询服务平台。联合创始人，天使轮，负责线上产品设计与前端开发。</li>
+<li>尚评，新型互动娱乐广告平台。联合创始人，天使轮，负责产品设计与前端开发。</li>
+</ul>
+<h4 id="工作">工作</h4>
+<ul>
+<li>阿里巴巴互动游戏事业部暑期实习2个月。</li>
+<li>校招季主投北京的国企与互联网民企，完成10家单位面试，拿到阿里、电子科学研究院、航天二院、豌豆荚4个Offer。</li>
+</ul>
+<h2 id="Skills">Skills</h2>
+<ul>
+<li>GXT，实验室项目信息系统开发所用技术，适合MIS的开发，并不十分主流。</li>
+<li>Web前端，感谢徐阳大神帮助入门，开始逐渐接触Bootstrap、Backbone、Angular等前端框架。</li>
+<li>Web后端，接触基于Python的Web开发框架如flask，等待上手练习。</li>
+<li>Markdown，开始尝试使用markdown进行文本编辑。</li>
+</ul>
+<h2 id="Tools">Tools</h2>
+<h4 id="硬">硬</h4>
+<ul>
+<li>入手ThinkPad笔记本一台，港货T440p，前任IdeaPad Y450享年4岁。</li>
+<li>入手华为P6一只，8G容量在校招季略显吃力。</li>
+<li>入手天猫魔盒1s一个，寄存在家里目前还未开封。</li>
+<li>入手128G SSD一个。</li>
+<li>入手网球拍一只，Babolat新手拍，赠予妹纸。</li>
+</ul>
+<h4 id="软">软</h4>
+<ul>
+<li>虾米音乐，PC与移动端表现均不错，音质较好，推荐。</li>
+<li>ColorNote，Google十佳应用，简约美观。</li>
+<li>Onenote，PKM工具，同步略慢，移动端略渣，但还是忍不住被它的UI和强大的功能所吸引。</li>
+<li>COC，策略类手游，玩了半年多，根本停不下来。</li>
+<li>邮箱大师，移动端邮箱工具。</li>
+<li>网易云阅读，UI不如鲜果，但支持自由订阅。</li>
+<li>Github Pages+Hexo+Google Analytic搭建博客。</li>
+<li>简书 一款不错的Markdown在线编辑器。</li>
+</ul>
+<h2 id="Life">Life</h2>
+<h4 id="运动">运动</h4>
+<ul>
+<li>入手清华综体健身卡，没有保持住一周一次的锻炼频率。</li>
+<li>继续预定每周日早的羽毛球长期场，羽毛球技术进入瓶颈期。</li>
+<li>开始接触并学习打网球。</li>
+</ul>
+<h4 id="读书">读书</h4>
+<ul>
+<li>曼昆经原——了解经济学常识。</li>
+<li>人性的弱点——看了一半坚持不下去了，感觉并非所需。</li>
+<li>人人都是产品经理——产品经理的第一本书。</li>
+<li>启示录——产品经理的圣经。</li>
+<li>用户体验的要素——深刻理解“用户体验”。</li>
+<li>沸腾的15年——讲述互联网沸腾史，正在看。</li>
+</ul>
+<h4 id="影音">影音</h4>
+<ul>
+<li>花事如期，文艺气息略浓厚的一部话剧。</li>
+<li>马兰花开，新清华学堂版第二遍。</li>
+<li>森林音乐节，邵夷贝、好妹妹、老狼、朴树。</li>
+<li>清华大学民乐、军乐新年音乐会。</li>
+<li>清华大学新年晚会，不一样的跨年。</li>
+<li>我是歌手2，每周五的必看节目，享受为数不多的天籁之音。</li>
+<li>爸爸去哪儿了2，论如何做一个好爸爸。</li>
+<li>爱情公寓4，逐渐将我的笑点拉低至正常人的水平。</li>
+<li>进击的巨人，风格独特，脑洞大开，口味极重。</li>
+<li>冰与火之歌第三季，依旧喜欢高智商重口味美剧。</li>
+<li>越狱，第三遍看仍然喜欢，陪妹子一起看。</li>
+<li>新版三国演义，恶补历史知识。</li>
+<li>火影，虽然烂尾但仍然每周跟，看了7年不曾想过有完结的一天。</li>
+<li>海贼王，看了十几集，暂时没找到吸引我的点。</li>
+<li>电影，so many…我是一个喜欢故事的人。</li>
+</ul>
+<h4 id="旅游">旅游</h4>
+<ul>
+<li>元旦和父母香港澳门游，香港澳门的确是一个购物的天堂。</li>
+<li>五一和妹子厦门二人浪漫游，我相信不论过多久，我们都不会忘记这次旅行的。</li>
+<li>十一和家人日本出国游，第一次出国，高性价比的跟团游~</li>
+</ul>
+<h2 id="Last">Last</h2>
+<p>3月10日，迎来24岁本命年，感谢科创小伙伴们的礼物。<br>3月21日，与你在一起，是我一辈子的幸运。<br>7月20日，亲人离去，哀愁万千。外婆一路走好。<br>3月-12月，暑期实习&amp;校招季，终于还是拖到了2015年。新的一年，任重而道远。</p>
+<h2 id="新的一年">新的一年</h2>
+<p>文末，在即将迎来2015年的时刻，给自己提一些希望和要求，望大家监督。</p>
+<ol>
+<li>身体好是第一生产力，新的一年，早8晚12，坚持跑步与健身，打好羽毛球和网球。</li>
+<li>两周为周期执行“计划-执行-反馈”的自我控制。</li>
+<li>培养一些习惯：<br>1）齐家为先，多给父母打电话，多陪领导；<br>2）英语不能忘；<br>3）人丑就要多读书；<br>3）作为一个预备产品经理，需要时刻关注资讯、及时整理；<br>4）思考&amp;总结，定期博客分享。</li>
+<li>想做的事：<br>1）租个满意的房子；<br>2）创业或技术上有所突破，搞点动静；<br>3）买架钢琴；<br>4）再陪妹子和爹妈旅游一次。</li>
+</ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    <![CDATA[<p>齐家立业平天下，24岁注定是不平凡的一年。转眼年末，做一份年终总结，用以纠错思过，改邪归正。</p>
+<h2 id="Experience">Experience</h2>
+<h4 id="科研">科研</h4>
+<ul>
+<li>发表ICSS会议论文一篇。</li>
+<l]]>
     </summary>
+    
+      <category term="年终总结" scheme="http://yxcvincent.github.io/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="计划" scheme="http://yxcvincent.github.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="生活" scheme="http://yxcvincent.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我的第一篇博客]]></title>
+    <link href="http://yxcvincent.github.io/2014/12/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yxcvincent.github.io/2014/12/31/我的第一篇博客/</id>
+    <published>2014-12-31T04:44:00.000Z</published>
+    <updated>2014-12-31T06:47:26.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="为什么要写博客">为什么要写博客</h2>
+<p>2014年是不平凡的一年，随着大学生活步入尾声，校招节奏的逐渐飞起，我也慢慢地脱离了曾经深陷的圈子，开始接触不同的人、不同的生活。真正对博客产生向往是在校招的时候，仔细品读过大神们的博客后，发现在这样一个后博客时代，博客不再追求高PV，不再盲目寻求SEO，它成为一个更加单纯美好的平台。</p>
+<p>每个人写博客都有着不尽相同的目的。我开始动笔主要源于：</p>
+<ul>
+<li><strong>积累</strong>。积累工作与生活当中的所思所想、所学所获。</li>
+<li><strong>激励</strong>。激励自己不断阅读，不断学习，不断实践。</li>
+<li><strong>交流</strong>。博客圈是一个充满大神的圈子。</li>
+<li><strong>分享</strong>。自强不息，也要厚德载物。</li>
+</ul>
+<p>我的博客生与2014年末，我的第一份工作即将尘埃落定的时候。我希望，它可以伴随我走完十年。</p>
+<p>感谢：</p>
+<ul>
+<li><a href="http://zhuanlan.zhihu.com/cnfeat/19743861" target="_blank" rel="external">你为什么要写博客</a></li>
+<li><a href="http://zhuanlan.zhihu.com/cnfeat/19743255" target="_blank" rel="external">我的博客时代</a></li>
+</ul>
+<h2 id="我的博客内容">我的博客内容</h2>
+<p>我的博客主要记录和分享工作和生活中自己<strong>对产品的思考</strong>、<strong>对技术的积累</strong>、和<strong>对生活的感悟</strong>，并不准备碎碎念走文艺路线，也不准备流水账记生活琐事。同时，博客也会定期<strong>转载一些个人认为是精品、有营养的文章</strong>，以提升博客的整体质量，激励阅读，促进交流。</p>
+<h2 id="搭建博客">搭建博客</h2>
+<p>作为一个工科男，虽然不那么有技术，但也不能放弃治疗。第一篇博客，简单分享一下这两天搭建博客过程当中接触到的产品与技术以及给予我帮助的博客文章。</p>
+<h3 id="Github_Pages">Github Pages</h3>
+<h4 id="什么是Github_Pages">什么是Github Pages</h4>
+<p>不了解Github的请戳：</p>
+<ul>
+<li><a href="http://www.worldhello.net/gotgithub/index.html" target="_blank" rel="external">GotGitHub：GitHub介绍</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程-廖雪峰</a></li>
+</ul>
+<p><a href="https://pages.github.com/" target="_blank" rel="external">github Pages</a>可以被认为是用户编写的、托管在github上的静态网页，用于介绍用户（团队）本身或项目。</p>
+<h4 id="为什么用Github_Pages">为什么用Github Pages</h4>
+<ul>
+<li><strong>实用</strong>。Github Pages稳定、免费，自带版本控制，可控性强。</li>
+<li><strong>趋势</strong>。Git是一种趋势，是一个圈子，鼓励自己踏入圈子，学习使用。</li>
+<li><strong>装逼</strong>。请原谅我对技术的无知。</li>
+</ul>
+<h4 id="如何使用Github_Pages">如何使用Github Pages</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a></li>
+<li><a href="http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html" target="_blank" rel="external">通过GitHub Pages建立个人站点</a></li>
+</ul>
+<h3 id="Hexo">Hexo</h3>
+<h4 id="什么是Hexo">什么是Hexo</h4>
+<p><a href="http://hexo.io/" target="_blank" rel="external">hexo</a>是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。</p>
+<p>引用作者的话：</p>
+<blockquote>
+<p>快速、简单且功能强大的 Node.js 博客框架。<br>A fast, simple &amp; powerful blog framework, powered by Node.js.</p>
+</blockquote>
+<h4 id="为什么用Hexo">为什么用Hexo</h4>
+<ul>
+<li><strong>轻</strong>。轻量级，高扩展性。</li>
+<li><strong>简</strong>。没用过Jekyll，据说相比而言Hexo命令更加简单，对中文支持更好。</li>
+</ul>
+<p>继续引用作者的话：</p>
+<blockquote>
+<p>不可思议的快速 ─ 只要一眨眼静态文件即生成完成<br>支持 Markdown<br>仅需一道指令即可部署到 GitHub Pages 和 Heroku<br>已移植 Octopress 插件<br>高扩展性、自订性<br>兼容于 Windows, Mac &amp; Linux</p>
+</blockquote>
+<h4 id="如何使用Hexo">如何使用Hexo</h4>
+<p>参考：</p>
+<ul>
+<li><a href="http://blog.csdn.net/poem_of_sunshine/article/details/29369785" target="_blank" rel="external"> 如何搭建一个独立博客——简明Github Pages与Hexo教程</a></li>
+<li><a href="http://zipperary.com/2013/05/28/hexo-guide-1/" target="_blank" rel="external">hexo系列教程：（一）hexo介绍</a></li>
+<li><a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="external">hexo系列教程：（二）搭建hexo博客</a></li>
+<li><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">hexo系列教程：（三）hexo博客的配置、使用</a></li>
+<li><a href="http://zipperary.com/2013/05/30/hexo-guide-4/" target="_blank" rel="external">hexo系列教程：（四）hexo博客的优化技巧</a></li>
+<li><a href="http://zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">hexo系列教程：（五）hexo博客的优化技巧续</a></li>
+</ul>
+<h4 id="Pacman主题">Pacman主题</h4>
+<p>参考：</p>
+<ul>
+<li><a href="http://yangjian.me/workspace/introducing-pacman-theme/" target="_blank" rel="external">Pacman主题介绍</a></li>
+</ul>
+<h3 id="Markdown">Markdown</h3>
+<h4 id="什么是Markdown">什么是Markdown</h4>
+<p><a href="http://markdown.tw/" target="_blank" rel="external">Markdown</a>的目标是实现<strong>易读易写</strong>。</p>
+<blockquote>
+<p>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。</p>
+</blockquote>
+<h4 id="为什么用Markdown">为什么用Markdown</h4>
+<p>阳志平的博客对Markdown有着全面的介绍：</p>
+<blockquote>
+<p>Markdown让我们专注写作，而不是关注排版</p>
+</blockquote>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.yangzhiping.com/tech/r-markdown-knitr.html" target="_blank" rel="external">Markdown写作浅谈</a></li>
+<li><a href="http://apple4us.com/2012/02/why-writers-should-use-markdown/" target="_blank" rel="external">为什么作家应该用 Markdown 保存自己的文稿</a></li>
+<li><a href="http://www.douban.com/note/221187015/" target="_blank" rel="external">為什麼文科生也該用markdown寫作?</a></li>
+</ul>
+<h4 id="如何使用Markdown">如何使用Markdown</h4>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="external">简书：献给写作者的 Markdown 新手指南</a></li>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></li>
+<li><a href="http://www.jianshu.com/c/BDu5F8" target="_blank" rel="external">简书：Markdown专题</a></li>
+</ul>
+<h4 id="简书与Markdown编辑器">简书与Markdown编辑器</h4>
+<p>Markdown的语法学起来不需半个小时，但是一款好的Markdown编辑器却是半天也难寻。本博客文章采用基于Web的<a href="http://www.jianshu.com/" target="_blank" rel="external">简书</a>进行编辑。简书UI简约美观，功能齐全，同时它也融合了社交、阅读等元素，已经不仅仅是一款编辑器。</p>
+<p>使用Markdown的另一个原因也是因为基于Windows的平台，选择Web在线编辑器是一个轻简合适的方案。Mac或Android用户可以参考以下博客挑选合适的编辑器。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.jianshu.com/p/dcffb6f60fe2" target="_blank" rel="external">Markdown编辑器之比较</a></li>
+<li><a href="http://frank19900731.github.io/blog/2014/12/21/mei-zhou-ruan-zhi-markdown-bi-ji-ruan-jian-ulysses-iii/" target="_blank" rel="external">每周一软之 Markdown 笔记软件 Ulysses III</a></li>
+</ul>
+<p>感谢以上所有文章作者。</p>
+<h2 id="知识共享">知识共享</h2>
+<p>本博客内所有文章采用<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/cn/" target="_blank" rel="external">知识共享署名-非商业性使用-禁止演绎 3.0 许可协议</a>进行许可。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="为什么要写博客">为什么要写博客</h2>
+<p>2014年是不平凡的一年，随着大学生活步入尾声，校招节奏的逐渐飞起，我也慢慢地脱离了曾经深陷的圈子，开始接触不同的人、不同的生活。真正对博客产生向往是在校招的时候，仔细品读过大神们的博客后，发现在这样一个后博客时代]]>
+    </summary>
+    
+      <category term="Blog" scheme="http://yxcvincent.github.io/tags/Blog/"/>
+    
+      <category term="Github" scheme="http://yxcvincent.github.io/tags/Github/"/>
+    
+      <category term="Hexo" scheme="http://yxcvincent.github.io/tags/Hexo/"/>
+    
+      <category term="Markdown" scheme="http://yxcvincent.github.io/tags/Markdown/"/>
+    
+      <category term="技术" scheme="http://yxcvincent.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
