@@ -1,0 +1,501 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>MEAN的安装与配置 | 戏水龙鹰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Yi Xiaochun">
+    
+    <meta name="description" content="前言
+最近尝试接触Web后端技术，看了看基于Java、Python、Nodejs的各种框架，最终选择了MEAN架构进行学习，理由主要包括三个方面：
+
+轻量级，入门门槛低。
+框架成熟，可参考资料多。
+可以一并学习Angular和Mongodb。
+
+本次学习历时12天，产出物是一个简单的用户管理系统（已">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml## RSS address." title="戏水龙鹰" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-58036738-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/head.png" alt="戏水龙鹰" title="戏水龙鹰"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="戏水龙鹰">戏水龙鹰</a></h1>
+				<h2 class="blog-motto">齐家立业平天下</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yxcvincent.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/01/12/MEAN的安装与配置/" title="MEAN的安装与配置" itemprop="url">MEAN的安装与配置</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yxcvincent.github.io" title="Yi Xiaochun">Yi Xiaochun</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-01-12T13:09:37.000Z" itemprop="datePublished">2015-01-12</time>
+    更新日期:<time datetime="2015-01-12T13:12:43.000Z" itemprop="dateModified">2015-01-12</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node-js与npm安装"><span class="toc-number">2.</span> <span class="toc-text">node.js与npm安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB安装"><span class="toc-number">3.</span> <span class="toc-text">MongoDB安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express安装"><span class="toc-number">4.</span> <span class="toc-text">Express安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Angular安装"><span class="toc-number">5.</span> <span class="toc-text">Angular安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ending"><span class="toc-number">6.</span> <span class="toc-text">Ending</span></a></li></ol>
+		</div>
+		
+		<h2 id="前言">前言</h2>
+<p>最近尝试接触Web后端技术，看了看基于Java、Python、Nodejs的各种框架，最终选择了MEAN架构进行学习，理由主要包括三个方面：</p>
+<ol>
+<li>轻量级，入门门槛低。</li>
+<li>框架成熟，可参考资料多。</li>
+<li>可以一并学习Angular和Mongodb。</li>
+</ol>
+<p>本次学习历时12天，产出物是一个简单的用户管理系统（已上传<a href="https://github.com/yxcvincent/MyProject.git" target="_blank" rel="external">Github-My Project</a>，欢迎拍砖）。这篇博客将会记录我在MEAN的安装配置过程中的一些操作方法，为日后再次上手提供一些支持。</p>
+<h2 id="node-js与npm安装">node.js与npm安装</h2>
+<p>首先引用官网的话来介绍一下node.js与npm。</p>
+<ul>
+<li><p><a href="http://nodejs.org/" target="_blank" rel="external">node.js</a>:</p>
+<blockquote>
+<p>Node.js® is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>:</p>
+<blockquote>
+<p>npm is the package manager for node .</p>
+</blockquote>
+</li>
+</ul>
+<p>本人Win8.1-64位系统，Windows的Node.js安装包安装里包含了npm。安装方法非常简单，从node.js官网下载对应版本的msi安装文件安装即可。</p>
+<h2 id="MongoDB安装">MongoDB安装</h2>
+<ul>
+<li><a href="http://www.mongodb.org/" target="_blank" rel="external">MongoDB</a><blockquote>
+<p>MongoDB是一种文件导向数据库管理系统，由C++撰写而成，以此来解决应用程序开发社区中的大量现实问题。——维基百科</p>
+</blockquote>
+</li>
+</ul>
+<p>安装方法:</p>
+<ol>
+<li>官网下载安装包进行安装。</li>
+<li>将MongoDB/bin文件夹添加至系统PATH环境变量。</li>
+<li>安装目录下新建mongo.config配置文件，配置data和log目录。<blockquote>
+<p>##store data here<br>dbpath=D:\mongodb\data<br>##all output go here<br>logpath=D:\mongodb\log\mongo.log<br>##log read and write operations<br>diaglog=3</p>
+</blockquote>
+</li>
+<li><p>启动MongoDB。<br>预配置：</p>
+<blockquote>
+<p>>mongod —config D:\mongodb\mongo.config<br>…<br>>mongo<br>MongoDB shell version: 2.6.6<br>connecting to: test</p>
+</blockquote>
+</li>
+<li><p>添加至Windows本地服务，这样就可以随机器开机启动了。</p>
+<blockquote>
+<p>> mongod —config D:\mongodb\mongo.config —install</p>
+</blockquote>
+</li>
+<li>简单的测试操作。以下代码执行了创建（转换）数据库，添加数据，查找并显示数据的操作。<blockquote>
+<p>>mongo<br>MongoDB shell version: 2.6.6<br>connecting to: test<br>>use usercollection<br>swiched to db usercollection<br>>db.usercollection.insert({ “username”:“testuser1″,“email”:“testuser1@testdomain.com” })<br>…<br>>db.usercollection.find().pretty()<br>…</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Express安装">Express安装</h2>
+<ul>
+<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="external">Express</a><blockquote>
+<p>Express 是一个简洁、灵活的 node.js Web 应用开发框架, 它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。</p>
+</blockquote>
+</li>
+</ul>
+<p>网上关于Express安装的博客很多，但方法不尽相同。主要差异原因在于Express版本的变化。文章主要参考Express官网指南进行安装，Express版本4.x。</p>
+<p>安装方法：</p>
+<ol>
+<li><p>使用生成器生成。</p>
+<blockquote>
+<p>$ npm install -g express-generator</p>
+</blockquote>
+</li>
+<li><p>编辑依赖项。<br>根据项目需求修改package.json文件，在dependencies中添加MongoDB和Monk的依赖：</p>
+<blockquote>
+<p>“mongodb”: “*“,<br>“monk”: “*“</p>
+</blockquote>
+</li>
+<li><p>安装。</p>
+<blockquote>
+<p>$ npm install</p>
+</blockquote>
+</li>
+<li><p>测试。成功后打开localhost:3000将会显示Express主页。</p>
+<blockquote>
+<p>$ npm start</p>
+</blockquote>
+</li>
+<li><p>使用monk连接MongoDB。<br>在app.js中添加以下代码</p>
+<blockquote>
+<p>var mongo = require(‘mongodb’);<br>var monk = require(‘monk’);<br>var db = monk(‘localhost:27017/yourdbname’);<br>…<br>app.use(function(req,res,next){<br> req.db = db;<br> res.locals.user = req.session.user;<br> next();<br>});</p>
+</blockquote>
+</li>
+<li><p>后端调用数据库方法</p>
+<blockquote>
+<p>var db = req.db;<br>var collection = db.get(‘usercollection’);<br>//查询<br>collection.find({email:req.body.email,password:req.body.password},{},function(e,docs){});<br>//插入<br>collection.insert(req.body,function(err,doc){});<br>//更新<br>collection.update({email:req.body.olduser.email},req.body.newuser,{safe:true},function(e,docs){});<br>//删除<br>collection.remove({email:req.body.email},{safe:true},function(e,docs){});</p>
+</blockquote>
+</li>
+</ol>
+<p>使用monk操作MongoDB的方法在网上并没有查阅到相关文档，也许是我查找的方式不对。另一种方法是使用mongoose操作，资料较全。</p>
+<h2 id="Angular安装">Angular安装</h2>
+<ul>
+<li><a href="http://www.ngnice.com/" target="_blank" rel="external">Angular</a><blockquote>
+<p>AngularJS是一款开源JavaScript函式库，由Google维护，用来协助单一页面应用程序运行的。它的目标是透过MVC模式（MVC）功能增强基于浏览器的应用，使开发和测试变得更加容易。——维基百科</p>
+</blockquote>
+</li>
+</ul>
+<p>官网和百科上对Angular的解释一如既往的深入难懂，但估计大部分小白第一次接触Angular只是被大牛告诉Angular出色的<strong>双向数据绑定</strong>的功能。快速了解Angular可以参考文末文章《怎样快速的学习AngularJS》。</p>
+<p>Angular和Bootstrap不算是安装了，在前端添加依赖就可（也可以用npm、bower类似的工具进行配置与管理）。js和css包可以在官网下载。</p>
+<p>Express安装完成后，在目录中添加App文件夹存放前端文件，修改默认启动入口，删除Express中不需要的文件与文件夹。</p>
+<h2 id="Ending">Ending</h2>
+<p>MEAN架构的优势主要在于前段后端的一体化，被誉为前端工程师的福音。在学习的过程中也接触到许多项目生成方法如：</p>
+<ol>
+<li><a href="http://mean.io/" target="_blank" rel="external">mean.io</a></li>
+<li>基于<a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a>生成器，如generator-meanstack</li>
+</ol>
+<p>不多作为初学者，而且目标系统也很简单轻小，因此没有一开始就上手这种方法。以后有机会可以尝试。</p>
+<p>最后的最后，感谢一下给予帮助的博客文章们：</p>
+<ol>
+<li><a href="http://www.jdon.com/idea/js/mean.html" target="_blank" rel="external">什么是MEAN全堆栈javascript开发框架</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/views/web/libraryview.jsp?sort_by=&amp;show_abstract=true&amp;show_all=&amp;search_flag=&amp;contentarea_by=Web+development&amp;search_by=%E7%B2%BE%E9%80%9A+MEAN&amp;topic_by=-1&amp;type_by=%E6%89%80%E6%9C%89%E7%B1%BB%E5%88%AB&amp;ibm-search=%E6%90%9C%E7%B4%A2" target="_blank" rel="external">IBM文档库：精通MEAN系列</a>(推荐)</li>
+<li><a href="http://www.toolmao.com/nodejs-express-ejs-mongodb-server" target="_blank" rel="external">从零开始搭建Node.js, Express, Ejs, Mongodb服务器</a></li>
+<li><a href="http://xuyuan923.github.io/2014/08/05/node-mongodb-tutorial/" target="_blank" rel="external">Node+Express+Mongodb+monk简易入门教程</a></li>
+<li><a href="http://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/" target="_blank" rel="external">How To Install MongoDB On Windows</a></li>
+<li><a href="http://blog.fens.me/series-nodejs/" target="_blank" rel="external">从零开始NodeJs系列文章</a>(推荐)</li>
+<li><a href="https://cnodejs.org/topic/53f23e198f44dfa35129c43b" target="_blank" rel="external">使用express4.x版和Jade模板重写《nodejs开发指南》微博实例</a></li>
+<li><a href="http://www.zouyesheng.com/angular.html" target="_blank" rel="external">Angular学习笔记</a></li>
+<li><a href="http://www.ngnice.com/posts/205af1ea1e13d2" target="_blank" rel="external">怎么样快速入门AngularJS</a></li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/MEAN/">MEAN</a><a href="/tags/Angular/">Angular</a><a href="/tags/Express/">Express</a><a href="/tags/MongoDB/">MongoDB</a><a href="/tags/Nodejs/">Nodejs</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yxcvincent.github.io/2015/01/12/MEAN的安装与配置/" data-title="MEAN的安装与配置 | 戏水龙鹰" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/12/31/2014年终总结/"  title="2014年终总结">
+ <strong>NEXT:</strong><br/> 
+ <span>2014年终总结
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node-js与npm安装"><span class="toc-number">2.</span> <span class="toc-text">node.js与npm安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB安装"><span class="toc-number">3.</span> <span class="toc-text">MongoDB安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express安装"><span class="toc-number">4.</span> <span class="toc-text">Express安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Angular安装"><span class="toc-number">5.</span> <span class="toc-text">Angular安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ending"><span class="toc-number">6.</span> <span class="toc-text">Ending</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/技术/" title="技术">技术<sup>2</sup></a></li>
+		
+			<li><a href="/categories/生活/" title="生活">生活<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Angular/" style="font-size: NaNpx;">Angular</a><a href="/tags/Blog/" style="font-size: NaNpx;">Blog</a><a href="/tags/Express/" style="font-size: NaNpx;">Express</a><a href="/tags/Github/" style="font-size: NaNpx;">Github</a><a href="/tags/Hexo/" style="font-size: NaNpx;">Hexo</a><a href="/tags/MEAN/" style="font-size: NaNpx;">MEAN</a><a href="/tags/Markdown/" style="font-size: NaNpx;">Markdown</a><a href="/tags/MongoDB/" style="font-size: NaNpx;">MongoDB</a><a href="/tags/Nodejs/" style="font-size: NaNpx;">Nodejs</a><a href="/tags/年终总结/" style="font-size: NaNpx;">年终总结</a><a href="/tags/计划/" style="font-size: NaNpx;">计划</a>
+    </div>
+  </div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://frank19900731.github.io/" target="_blank" title="Blog of 太极儒">Blog of 太极儒</a></li>
+      <li><a href="http://dangfan.me/" target="_blank" title="有一说一">有一说一</a></li>
+    </ul>
+</div>
+<div>
+	<p class="asidetitle"></p>
+	<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/cn/" target=_blank rel="license">
+		<img src="https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png" style = "margin-top:10px;">
+	</a>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml## RSS address." target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="http://yxcvincent.github.io" target="_blank" title="Yi Xiaochun">Yi Xiaochun</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-58036738-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>

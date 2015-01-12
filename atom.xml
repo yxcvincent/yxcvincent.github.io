@@ -4,7 +4,7 @@
   <subtitle><![CDATA[齐家立业平天下]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yxcvincent.github.io/"/>
-  <updated>2015-01-03T10:20:48.761Z</updated>
+  <updated>2015-01-12T13:12:59.454Z</updated>
   <id>http://yxcvincent.github.io/</id>
   
   <author>
@@ -15,11 +15,164 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[MEAN的安装与配置]]></title>
+    <link href="http://yxcvincent.github.io/2015/01/12/MEAN%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yxcvincent.github.io/2015/01/12/MEAN的安装与配置/</id>
+    <published>2015-01-12T13:09:37.000Z</published>
+    <updated>2015-01-12T13:12:43.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>最近尝试接触Web后端技术，看了看基于Java、Python、Nodejs的各种框架，最终选择了MEAN架构进行学习，理由主要包括三个方面：</p>
+<ol>
+<li>轻量级，入门门槛低。</li>
+<li>框架成熟，可参考资料多。</li>
+<li>可以一并学习Angular和Mongodb。</li>
+</ol>
+<p>本次学习历时12天，产出物是一个简单的用户管理系统（已上传<a href="https://github.com/yxcvincent/MyProject.git" target="_blank" rel="external">Github-My Project</a>，欢迎拍砖）。这篇博客将会记录我在MEAN的安装配置过程中的一些操作方法，为日后再次上手提供一些支持。</p>
+<h2 id="node-js与npm安装">node.js与npm安装</h2>
+<p>首先引用官网的话来介绍一下node.js与npm。</p>
+<ul>
+<li><p><a href="http://nodejs.org/" target="_blank" rel="external">node.js</a>:</p>
+<blockquote>
+<p>Node.js® is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>:</p>
+<blockquote>
+<p>npm is the package manager for node .</p>
+</blockquote>
+</li>
+</ul>
+<p>本人Win8.1-64位系统，Windows的Node.js安装包安装里包含了npm。安装方法非常简单，从node.js官网下载对应版本的msi安装文件安装即可。</p>
+<h2 id="MongoDB安装">MongoDB安装</h2>
+<ul>
+<li><a href="http://www.mongodb.org/" target="_blank" rel="external">MongoDB</a><blockquote>
+<p>MongoDB是一种文件导向数据库管理系统，由C++撰写而成，以此来解决应用程序开发社区中的大量现实问题。——维基百科</p>
+</blockquote>
+</li>
+</ul>
+<p>安装方法:</p>
+<ol>
+<li>官网下载安装包进行安装。</li>
+<li>将MongoDB/bin文件夹添加至系统PATH环境变量。</li>
+<li>安装目录下新建mongo.config配置文件，配置data和log目录。<blockquote>
+<p>##store data here<br>dbpath=D:\mongodb\data<br>##all output go here<br>logpath=D:\mongodb\log\mongo.log<br>##log read and write operations<br>diaglog=3</p>
+</blockquote>
+</li>
+<li><p>启动MongoDB。<br>预配置：</p>
+<blockquote>
+<p>>mongod —config D:\mongodb\mongo.config<br>…<br>>mongo<br>MongoDB shell version: 2.6.6<br>connecting to: test</p>
+</blockquote>
+</li>
+<li><p>添加至Windows本地服务，这样就可以随机器开机启动了。</p>
+<blockquote>
+<p>> mongod —config D:\mongodb\mongo.config —install</p>
+</blockquote>
+</li>
+<li>简单的测试操作。以下代码执行了创建（转换）数据库，添加数据，查找并显示数据的操作。<blockquote>
+<p>>mongo<br>MongoDB shell version: 2.6.6<br>connecting to: test<br>>use usercollection<br>swiched to db usercollection<br>>db.usercollection.insert({ “username”:“testuser1″,“email”:“testuser1@testdomain.com” })<br>…<br>>db.usercollection.find().pretty()<br>…</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Express安装">Express安装</h2>
+<ul>
+<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="external">Express</a><blockquote>
+<p>Express 是一个简洁、灵活的 node.js Web 应用开发框架, 它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。</p>
+</blockquote>
+</li>
+</ul>
+<p>网上关于Express安装的博客很多，但方法不尽相同。主要差异原因在于Express版本的变化。文章主要参考Express官网指南进行安装，Express版本4.x。</p>
+<p>安装方法：</p>
+<ol>
+<li><p>使用生成器生成。</p>
+<blockquote>
+<p>$ npm install -g express-generator</p>
+</blockquote>
+</li>
+<li><p>编辑依赖项。<br>根据项目需求修改package.json文件，在dependencies中添加MongoDB和Monk的依赖：</p>
+<blockquote>
+<p>“mongodb”: “*“,<br>“monk”: “*“</p>
+</blockquote>
+</li>
+<li><p>安装。</p>
+<blockquote>
+<p>$ npm install</p>
+</blockquote>
+</li>
+<li><p>测试。成功后打开localhost:3000将会显示Express主页。</p>
+<blockquote>
+<p>$ npm start</p>
+</blockquote>
+</li>
+<li><p>使用monk连接MongoDB。<br>在app.js中添加以下代码</p>
+<blockquote>
+<p>var mongo = require(‘mongodb’);<br>var monk = require(‘monk’);<br>var db = monk(‘localhost:27017/yourdbname’);<br>…<br>app.use(function(req,res,next){<br> req.db = db;<br> res.locals.user = req.session.user;<br> next();<br>});</p>
+</blockquote>
+</li>
+<li><p>后端调用数据库方法</p>
+<blockquote>
+<p>var db = req.db;<br>var collection = db.get(‘usercollection’);<br>//查询<br>collection.find({email:req.body.email,password:req.body.password},{},function(e,docs){});<br>//插入<br>collection.insert(req.body,function(err,doc){});<br>//更新<br>collection.update({email:req.body.olduser.email},req.body.newuser,{safe:true},function(e,docs){});<br>//删除<br>collection.remove({email:req.body.email},{safe:true},function(e,docs){});</p>
+</blockquote>
+</li>
+</ol>
+<p>使用monk操作MongoDB的方法在网上并没有查阅到相关文档，也许是我查找的方式不对。另一种方法是使用mongoose操作，资料较全。</p>
+<h2 id="Angular安装">Angular安装</h2>
+<ul>
+<li><a href="http://www.ngnice.com/" target="_blank" rel="external">Angular</a><blockquote>
+<p>AngularJS是一款开源JavaScript函式库，由Google维护，用来协助单一页面应用程序运行的。它的目标是透过MVC模式（MVC）功能增强基于浏览器的应用，使开发和测试变得更加容易。——维基百科</p>
+</blockquote>
+</li>
+</ul>
+<p>官网和百科上对Angular的解释一如既往的深入难懂，但估计大部分小白第一次接触Angular只是被大牛告诉Angular出色的<strong>双向数据绑定</strong>的功能。快速了解Angular可以参考文末文章《怎样快速的学习AngularJS》。</p>
+<p>Angular和Bootstrap不算是安装了，在前端添加依赖就可（也可以用npm、bower类似的工具进行配置与管理）。js和css包可以在官网下载。</p>
+<p>Express安装完成后，在目录中添加App文件夹存放前端文件，修改默认启动入口，删除Express中不需要的文件与文件夹。</p>
+<h2 id="Ending">Ending</h2>
+<p>MEAN架构的优势主要在于前段后端的一体化，被誉为前端工程师的福音。在学习的过程中也接触到许多项目生成方法如：</p>
+<ol>
+<li><a href="http://mean.io/" target="_blank" rel="external">mean.io</a></li>
+<li>基于<a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a>生成器，如generator-meanstack</li>
+</ol>
+<p>不多作为初学者，而且目标系统也很简单轻小，因此没有一开始就上手这种方法。以后有机会可以尝试。</p>
+<p>最后的最后，感谢一下给予帮助的博客文章们：</p>
+<ol>
+<li><a href="http://www.jdon.com/idea/js/mean.html" target="_blank" rel="external">什么是MEAN全堆栈javascript开发框架</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/views/web/libraryview.jsp?sort_by=&amp;show_abstract=true&amp;show_all=&amp;search_flag=&amp;contentarea_by=Web+development&amp;search_by=%E7%B2%BE%E9%80%9A+MEAN&amp;topic_by=-1&amp;type_by=%E6%89%80%E6%9C%89%E7%B1%BB%E5%88%AB&amp;ibm-search=%E6%90%9C%E7%B4%A2" target="_blank" rel="external">IBM文档库：精通MEAN系列</a>(推荐)</li>
+<li><a href="http://www.toolmao.com/nodejs-express-ejs-mongodb-server" target="_blank" rel="external">从零开始搭建Node.js, Express, Ejs, Mongodb服务器</a></li>
+<li><a href="http://xuyuan923.github.io/2014/08/05/node-mongodb-tutorial/" target="_blank" rel="external">Node+Express+Mongodb+monk简易入门教程</a></li>
+<li><a href="http://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/" target="_blank" rel="external">How To Install MongoDB On Windows</a></li>
+<li><a href="http://blog.fens.me/series-nodejs/" target="_blank" rel="external">从零开始NodeJs系列文章</a>(推荐)</li>
+<li><a href="https://cnodejs.org/topic/53f23e198f44dfa35129c43b" target="_blank" rel="external">使用express4.x版和Jade模板重写《nodejs开发指南》微博实例</a></li>
+<li><a href="http://www.zouyesheng.com/angular.html" target="_blank" rel="external">Angular学习笔记</a></li>
+<li><a href="http://www.ngnice.com/posts/205af1ea1e13d2" target="_blank" rel="external">怎么样快速入门AngularJS</a></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2>
+<p>最近尝试接触Web后端技术，看了看基于Java、Python、Nodejs的各种框架，最终选择了MEAN架构进行学习，理由主要包括三个方面：</p>
+<ol>
+<li>轻量级，入门门槛低。</li>
+<li>框架成熟，可参考资料多。<]]>
+    </summary>
+    
+      <category term="MEAN" scheme="http://yxcvincent.github.io/tags/MEAN/"/>
+    
+      <category term="Angular" scheme="http://yxcvincent.github.io/tags/Angular/"/>
+    
+      <category term="Express" scheme="http://yxcvincent.github.io/tags/Express/"/>
+    
+      <category term="MongoDB" scheme="http://yxcvincent.github.io/tags/MongoDB/"/>
+    
+      <category term="Nodejs" scheme="http://yxcvincent.github.io/tags/Nodejs/"/>
+    
+      <category term="技术" scheme="http://yxcvincent.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[2014年终总结]]></title>
     <link href="http://yxcvincent.github.io/2014/12/31/2014%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     <id>http://yxcvincent.github.io/2014/12/31/2014年终总结/</id>
     <published>2014-12-31T06:49:05.000Z</published>
-    <updated>2014-12-31T07:29:21.000Z</updated>
+    <updated>2015-01-12T13:12:18.000Z</updated>
     <content type="html"><![CDATA[<p>齐家立业平天下，24岁注定是不平凡的一年。转眼年末，做一份年终总结，用以纠错思过，改邪归正。</p>
 <h2 id="Experience">Experience</h2>
 <h3 id="科研">科研</h3>
@@ -125,7 +278,7 @@
 <ol>
 <li>身体好是第一生产力，新的一年，早8晚12，坚持跑步与健身，打好羽毛球和网球。</li>
 <li>两周为周期执行“计划-执行-反馈”的自我控制。</li>
-<li>培养一些习惯：<br>1）齐家为先，多给父母打电话，多陪领导；<br>2）英语不能忘；<br>3）人丑就要多读书；<br>3）作为一个预备产品经理，需要时刻关注资讯、及时整理；<br>4）思考&amp;总结，定期博客分享。</li>
+<li>培养一些习惯：<br>1）齐家为先，多给父母打电话，多陪领导；<br>2）英语不能忘；<br>3）人丑就要多读书；<br>4）作为一个预备产品经理，需要时刻关注资讯、及时整理；<br>5）思考&amp;总结，定期博客分享。</li>
 <li>想做的事：<br>1）租个满意的房子；<br>2）创业或技术上有所突破，搞点动静；<br>3）买架钢琴；<br>4）再陪妹子和爹妈旅游一次。</li>
 </ol>
 ]]></content>
