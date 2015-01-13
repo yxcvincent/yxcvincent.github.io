@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yxcvincent.github.io/2015/01/13/%E6%A0%A1%E6%8B%9B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2015-01-13T12:55:06.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yxcvincent.github.io/2015/01/12/MEAN%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2015-01-12T13:12:43.000Z</lastmod>
   </url>
@@ -22,12 +27,12 @@
   </url>
   
   <url>
-    <loc>http://yxcvincent.github.io/categories/index.html</loc>
+    <loc>http://yxcvincent.github.io/tags/index.html</loc>
     <lastmod>2014-12-30T03:11:45.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yxcvincent.github.io/tags/index.html</loc>
+    <loc>http://yxcvincent.github.io/categories/index.html</loc>
     <lastmod>2014-12-30T03:11:45.000Z</lastmod>
   </url>
   
