@@ -4,7 +4,7 @@
   <subtitle><![CDATA[齐家立业平天下]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yxcvincent.github.io/"/>
-  <updated>2015-01-16T13:00:14.481Z</updated>
+  <updated>2015-01-17T13:49:17.949Z</updated>
   <id>http://yxcvincent.github.io/</id>
   
   <author>
@@ -73,7 +73,7 @@
     <link href="http://yxcvincent.github.io/2015/01/12/MEAN%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     <id>http://yxcvincent.github.io/2015/01/12/MEAN的安装与配置/</id>
     <published>2015-01-12T13:09:37.000Z</published>
-    <updated>2015-01-12T13:12:43.000Z</updated>
+    <updated>2015-01-17T13:48:49.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2>
 <p>最近尝试接触Web后端技术，看了看基于Java、Python、Nodejs的各种框架，最终选择了MEAN架构进行学习，理由主要包括三个方面：</p>
 <ol>
@@ -81,7 +81,7 @@
 <li>框架成熟，可参考资料多。</li>
 <li>可以一并学习Angular和Mongodb。</li>
 </ol>
-<p>本次学习历时12天，产出物是一个简单的用户管理系统（已上传<a href="https://github.com/yxcvincent/MyProject.git" target="_blank" rel="external">Github-My Project</a>，欢迎拍砖）。这篇博客将会记录我在MEAN的安装配置过程中的一些操作方法，为日后再次上手提供一些支持。</p>
+<p>本次学习历时12天，产出物是一个简单的用户管理系统。这篇博客将会记录我在MEAN的安装配置过程中的一些操作方法，为日后再次上手提供一些支持。</p>
 <h2 id="node-js与npm安装">node.js与npm安装</h2>
 <p>首先引用官网的话来介绍一下node.js与npm。</p>
 <ul>
@@ -108,24 +108,33 @@
 <ol>
 <li>官网下载安装包进行安装。</li>
 <li>将MongoDB/bin文件夹添加至系统PATH环境变量。</li>
-<li>安装目录下新建mongo.config配置文件，配置data和log目录。<blockquote>
-<p>##store data here<br>dbpath=D:\mongodb\data<br>##all output go here<br>logpath=D:\mongodb\log\mongo.log<br>##log read and write operations<br>diaglog=3</p>
-</blockquote>
-</li>
+<li>安装目录下新建mongo.config配置文件，配置data和log目录。<pre><code> <span class="comment">##store data here</span>
+ <span class="variable">dbpath=</span>D:\mongodb\data 
+ <span class="comment">##all output go here</span>
+ <span class="variable">logpath=</span>D:\mongodb\log\mongo.log 
+ <span class="comment">##log read and write operations</span>
+ <span class="variable">diaglog=</span><span class="number">3</span>
+</code></pre></li>
 <li><p>启动MongoDB。<br>预配置：</p>
-<blockquote>
-<p>>mongod —config D:\mongodb\mongo.config<br>…<br>>mongo<br>MongoDB shell version: 2.6.6<br>connecting to: test</p>
-</blockquote>
-</li>
+<pre><code> &gt;mongod --config D:\mongodb\mongo.config
+ <span class="keyword">...</span>
+ &gt;mongo
+ MongoDB shell version: <span class="number">2.6</span><span class="number">.6</span>
+ connecting to: test
+</code></pre></li>
 <li><p>添加至Windows本地服务，这样就可以随机器开机启动了。</p>
-<blockquote>
-<p>> mongod —config D:\mongodb\mongo.config —install</p>
-</blockquote>
-</li>
-<li>简单的测试操作。以下代码执行了创建（转换）数据库，添加数据，查找并显示数据的操作。<blockquote>
-<p>>mongo<br>MongoDB shell version: 2.6.6<br>connecting to: test<br>>use usercollection<br>swiched to db usercollection<br>>db.usercollection.insert({ “username”:“testuser1″,“email”:“testuser1@testdomain.com” })<br>…<br>>db.usercollection.find().pretty()<br>…</p>
-</blockquote>
-</li>
+<pre><code> &gt; <span class="comment">mongod</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">config</span> <span class="comment">D:\mongodb\mongo</span><span class="string">.</span><span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">install</span>
+</code></pre></li>
+<li>简单的测试操作。以下代码执行了创建（转换）数据库，添加数据，查找并显示数据的操作。<pre><code> &gt;mongo
+ MongoDB shell version: <span class="number">2.6</span><span class="number">.6</span>
+ connecting to: test
+ &gt;use usercollection
+ swiched to db usercollection
+ &gt;db.usercollection.insert({ “username”:“testuser1″,“email”:“testuser1@testdomain.com” })
+ <span class="keyword">...</span>
+ &gt;db.usercollection.find().pretty()
+ <span class="keyword">...</span>
+</code></pre></li>
 </ol>
 <h2 id="Express安装">Express安装</h2>
 <ul>
@@ -138,35 +147,41 @@
 <p>安装方法：</p>
 <ol>
 <li><p>使用生成器生成。</p>
-<blockquote>
-<p>$ npm install -g express-generator</p>
-</blockquote>
-</li>
+<pre><code> <span class="variable">$ </span>npm install -g express-generator
+</code></pre></li>
 <li><p>编辑依赖项。<br>根据项目需求修改package.json文件，在dependencies中添加MongoDB和Monk的依赖：</p>
-<blockquote>
-<p>“mongodb”: “*“,<br>“monk”: “*“</p>
-</blockquote>
-</li>
+<pre><code> <span class="string">"mongodb"</span>: <span class="string">"\*"</span>,
+ <span class="string">"monk"</span>: <span class="string">"\*"</span>
+</code></pre></li>
 <li><p>安装。</p>
-<blockquote>
-<p>$ npm install</p>
-</blockquote>
-</li>
+<pre><code> <span class="variable">$ </span>npm install
+</code></pre></li>
 <li><p>测试。成功后打开localhost:3000将会显示Express主页。</p>
-<blockquote>
-<p>$ npm start</p>
-</blockquote>
-</li>
+<pre><code> <span class="variable">$ </span>npm start
+</code></pre></li>
 <li><p>使用monk连接MongoDB。<br>在app.js中添加以下代码</p>
-<blockquote>
-<p>var mongo = require(‘mongodb’);<br>var monk = require(‘monk’);<br>var db = monk(‘localhost:27017/yourdbname’);<br>…<br>app.use(function(req,res,next){<br> req.db = db;<br> res.locals.user = req.session.user;<br> next();<br>});</p>
-</blockquote>
-</li>
+<pre><code> var mongo = <span class="keyword">require</span>(<span class="string">'mongodb'</span>);
+ var monk = <span class="keyword">require</span>(<span class="string">'monk'</span>);
+ var db = monk(<span class="string">'localhost:27017/yourdbname'</span>);
+ <span class="keyword">...</span>
+ app.use(<span class="keyword">function</span>(req,res,<span class="keyword">next</span>){
+     req.db = db;
+     res.locals.user = req.session.user;
+     <span class="keyword">next</span>();
+ });
+</code></pre></li>
 <li><p>后端调用数据库方法</p>
-<blockquote>
-<p>var db = req.db;<br>var collection = db.get(‘usercollection’);<br>//查询<br>collection.find({email:req.body.email,password:req.body.password},{},function(e,docs){});<br>//插入<br>collection.insert(req.body,function(err,doc){});<br>//更新<br>collection.update({email:req.body.olduser.email},req.body.newuser,{safe:true},function(e,docs){});<br>//删除<br>collection.remove({email:req.body.email},{safe:true},function(e,docs){});</p>
-</blockquote>
-</li>
+<pre><code> <span class="keyword">var</span> db = req.db;
+ <span class="keyword">var</span> collection = db.<span class="keyword">get</span>(<span class="string">'usercollection'</span>);
+ <span class="comment">//查询</span>
+ collection.find({email:req.body.email,password:req.body.password},{},<span class="function"><span class="keyword">function</span><span class="params">(e,docs)</span></span>{});
+ <span class="comment">//插入</span>
+ collection.insert(req.body,<span class="function"><span class="keyword">function</span><span class="params">(err,doc)</span></span>{});
+ <span class="comment">//更新</span>
+ collection.update({email:req.body.olduser.email},req.body.newuser,{safe:<span class="literal">true</span>},<span class="function"><span class="keyword">function</span><span class="params">(e,docs)</span></span>{});
+ <span class="comment">//删除</span>
+ collection.remove({email:req.body.email},{safe:<span class="literal">true</span>},<span class="function"><span class="keyword">function</span><span class="params">(e,docs)</span></span>{});
+</code></pre></li>
 </ol>
 <p>使用monk操作MongoDB的方法在网上并没有查阅到相关文档，也许是我查找的方式不对。另一种方法是使用mongoose操作，资料较全。</p>
 <h2 id="Angular安装">Angular安装</h2>
