@@ -3,6 +3,66 @@
 
     
   <url>
+    <loc>http://yxcvincent.github.io/2015/10/22/WebP%E5%88%9D%E6%8E%A2/</loc>
+    <lastmod>2015-10-22T15:15:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebP初探</title>
+        <pubTime>2015-10-22T15:13:46.000Z</pubTime>
+        
+        <tag>WebP </tag>
+         
+        <tag>前端 </tag>
+         
+         <content><![CDATA[<h2 id="什么是WebP">什么是WebP</h2>
+<p>具不完全统计，互联网流量中60%都产生于图片，图片永远是流量的大头，如何保证在图片的精细度不降低的前提下缩小图片体积，成为了一个有价值且值得探索的事情。<br><a id="more"></a><br><a href="https://developers.google.com/speed/webp/?hl=zh-CN" target="_blank" rel="external">WEBP</a> 是google推出的意图改变web图片JPG、PNG、GIF三分天下局势的一种图片格式。它不仅支持无损或有损压缩、alpha通道，还支持动画演示。在同画质的情况下，webp格式图片占用体积相较于jpg图片大约减少40%，相较于无损png图片大约减少30%。</p>
+<p>目前，移动端Android4.0以上、PC端chorme 10+（14 ~ 16 有渲染bug）、opera 11+ 、safri均支持webp格式图片。</p>
+<h2 id="WebP的优点">WebP的优点</h2>
+<p>WebP 的优势体现在它具有更优的图像数据压缩算法，能带来更小的图片体积，而且拥有肉眼识别无差异的图像质量；同时具备了无损和有损的压缩模式、Alpha 透明以及动画的特性，在 JPEG 和 PNG 上的转化效果都非常优秀、稳定和统一。</p>
+<p>科技博客 Gig‍‍‍aOM 曾报道：YouTube 的视频略缩图采用 WebP 格式后，网页加载速度提升了 10%；谷歌的 Chrome 网上应用商店采用 WebP 格式图片后，每天可以节省几 TB 的带宽，页面平均加载时间大约减少 1/3；Google+ 移动应用采用 WebP 图片格式后，每天节省了 50TB 数据存储空间。</p>
+<p>这里列举一个简单的测试：对比 PNG 原图、PNG 无损压缩、PNG 转 WebP（无损）、PNG 转 WebP（有损）的压缩效果。更多测试查看<a href="https://isparta.github.io/compare-webp/index.html#12345" target="_blank" rel="external">这里</a>（请用 Chrome 浏览器打开）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/145093-1059adc239ac8cdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>可以得出结论：</p>
+<ul>
+<li>PNG 转 WebP 的压缩率要高于 PNG 原图压缩率，同样支持有损与无损压缩</li>
+<li>转换后的 WebP 体积大幅减少，图片质量也得到保障（同时肉眼几乎无法看出差异）</li>
+<li>转换后的 WebP 支持 Alpha 透明和 24-bit 颜色数，不存在 PNG8 色彩不够丰富和在浏览器中可能会出现毛边的问题</li>
+</ul>
+<p><a href="http://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">“WebP探寻之路”文章</a>还从流畅度、解码耗时、CPU 使用、内存占用几个维度对WebP格式和Png格式进行了对比分析。详情可移步查看。</p>
+<h2 id="WebP的缺点">WebP的缺点</h2>
+<p>目前WEBP与JPG相比较，编码速度慢10倍，解码速度慢1.5倍。</p>
+<p>针对1.5倍的解码速度是否影响用户体验的问题，dbay团队进行了测试，50张同样质量的WEBP与jgp加载的速度对比：<a href="http://www.webpagetest.org/video/view.php?id=130125_7b15e676f5fa0b736f247ff0ed36517e64d9c9ea" target="_blank" rel="external">http://www.webpagetest.org/video/view.php?id=130125_7b15e676f5fa0b736f247ff0ed36517e64d9c9ea</a></p>
+<p>此测试表明，webp虽然会增加额外的解码时间，但是由于减少了文件体积，缩短了加载的时间，实际上文件的渲染速度反而变快了，从下面的图片中可以很明显的看到。</p>
+<h2 id="WebP的应用">WebP的应用</h2>
+<p>2010 年发布的 WebP 已经不算是新鲜事物了，在 Google 的明星产品如 Youtube、Gmail、Google Play 中都可以看到 WebP 的身影，而 Chrome 网上商店甚至已完全使用了 WebP。国外公司如 Facebook、ebay 和国内公司如腾讯、淘宝、美团等也早已尝鲜。目前 WebP 也在我厂很多的项目中得到应用，如腾讯新闻客户端、腾讯网、QQ空间等，同时也有一些针对 WebP 的图片格式转换工具，如 <a href="http://zhitu.tencent.com/" target="_blank" rel="external">智图</a>，<a href="http://isparta.github.io/" target="_blank" rel="external">iSparta</a> 等。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/145093-5c8b7510278fe6bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>对于企业来讲，如果要大面积应用WEBP，无疑对服务器存储是一个很大考验。我们不能抛弃原有格式，那么存储的数据量将会增加60%，如果请求时再转换，由于目前转码的效率太低，特别的大文件的PNG速度相当的慢，这两点都是目前实际使用最大的痛点。</p>
+<p>即使要尝试使用，也不能像facebook那样，在相册中做试验，相册类的应用很多用户会有把照片从web上另存的需求，而WEBP在没有安装解码包的情况下，即使下载到电脑中也是无法直接浏览的，所以一定要避免这种应用场景。<br>目前我认为可行的应用场景：</p>
+<ul>
+<li>客户端软件，内嵌了基于Chromium的webview，这类浏览器中应用的网页是可以完全使用webp格式，提升加载渲染速度，不考虑兼容。</li>
+<li>用node-webkit开发的程序，用webp可以减少文件包的体积。</li>
+<li>移动应用 或 网页游戏 ,界面需要大量图片,可以嵌入webp的解码包,能够节省用户流量，提升访问速度。</li>
+</ul>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://developers.google.com/speed/webp/?hl=zh-CN" target="_blank" rel="external">A new image format for the Web</a></li>
+<li><a href="http://baike.baidu.com/link?url=fcpPQzAegoS8tA3AWAlbZ6GGxXIWyoIjdXflgekh-VVoRH_64Txn3RKFYYUjuyu4hGhcKVo5xK3ajZEQaMeKG_" target="_blank" rel="external">WebP百度百科</a></li>
+<li><a href="[http://isux.tencent.com/introduction-of-webp.html](http://isux.tencent.com/introduction-of-webp.html">腾讯ISUX</a></li>
+<li><a href="http://blog.csdn.net/xcysuccess3/article/details/38845625" target="_blank" rel="external">WEBP-起点博客</a>]<a href="http://blog.csdn.net/xcysuccess3/article/details/38845625" target="_blank" rel="external">http://blog.csdn.net/xcysuccess3/article/details/38845625</a>)</li>
+</ul>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://yxcvincent.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yxcvincent.github.io/2015/06/08/%E3%80%90%E8%8F%9C%E9%B8%9F%E8%AF%BB%E4%B9%A6%E3%80%91%E4%BB%8E0%E5%88%B01/</loc>
     <lastmod>2015-06-08T14:18:34.000Z</lastmod>
     <data>
